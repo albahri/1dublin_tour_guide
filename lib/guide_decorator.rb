@@ -15,7 +15,6 @@ class BasicGuide
 	def place
 		return @place
 	end
-
 	
 end
 
