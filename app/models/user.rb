@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
    #attr_accessible :email, :password, :password_confirmation, :remember_me, :username
 
    #validates_presence_of :username
+   has_one :profile
 end

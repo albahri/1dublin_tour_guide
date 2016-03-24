@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :profiles
   resources :guides do
     resources :posts
   end
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   
    root :to => "home#index"
 
+  get'/signedinuserprofile' => 'profiles#signedinuserprofile' 
 
   # authenticated :admin do
   #   root to: "home#adminspage"
