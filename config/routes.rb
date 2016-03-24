@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :guides
-  # get 'home/userspage'
-
-  # get 'home/adminspage'
+  
+  resources :guides do
+    resources :posts
+  end
+  
 
   resources :home
   devise_for :users, path_names: {sign_in: "signin", sign_out: "logout", sign_up: "signup"}

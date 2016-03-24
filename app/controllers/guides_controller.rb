@@ -39,10 +39,15 @@ class GuidesController < ApplicationController
     #create an instance/object of a BasicGuide
     myGuide = BasicGuide.new(50, @guide.place, @guide.date, @guide.time, @guide.language )
 
-    #add the wxtra features to the new Guide 
+    #add the extra features to the new Guide 
     if params[:guide][:audio].to_s.length > 0 then 
       myGuide = AudioGuideDecorator.new(myGuide)
     end
+
+    if params[:guide][:lunch].to_s.length > 0 then 
+      myGuide = LunchDecorator.new(myGuide)
+    end
+
 
     #populate the cost and place details
     @guide.place = myGuide.place

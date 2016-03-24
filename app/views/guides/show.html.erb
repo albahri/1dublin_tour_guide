@@ -16,19 +16,20 @@
 </p>
 
 <p>
-  <strong>Language:</strong>
-  <%= @guide.language %>
-</p>
-
-<p>
   <strong>Cost:</strong>
   <%= @guide.cost %>
 </p>
 
+
+<!-- Display the post of a guide -->
+<h5>Posts</h5>
+<% @guide.posts.each do |p| %>
 <p>
-  <strong>Description:</strong>
-  <%= @guide.description %>
+<b>Message:</b>
+<%= p.post_message %>
 </p>
+<% end %>
+<%= link_to 'Show posts', guide_posts_path(@guide) %>
 
 <%= link_to 'Edit', edit_guide_path(@guide) %> |
 <%= link_to 'Back', guides_path %>

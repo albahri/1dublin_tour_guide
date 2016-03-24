@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Post in <%= @guide.guide_title %></h1>
+<p> <%= @post.post_message %> </p>
+
+<%= link_to 'Edit', edit_guide_post_path(@guide, @post) %> |
+<%= link_to 'Back', guide_posts_path (@guide) %>
+
+<!-- <p>
+  <strong>Post message:</strong>
+  <%= @post.post_message %>
+</p>
+
+<p>
+  <strong>Guide:</strong>
+  <%= @post.guide %>
+</p> -->
+
+

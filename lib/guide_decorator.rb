@@ -46,4 +46,12 @@ class  AudioGuideDecorator < GuideDecorator
 
 end
 
+class  LunchDecorator < GuideDecorator
+	def initialize(real_guide)
+		super(real_guide)
+		@extra_cost = 15
+	end 
+
+end
+
 

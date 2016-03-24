@@ -26,19 +26,18 @@
     <%= f.label :time %><br>
     <%= f.time_select :time %>
   </div>
+  
   <div class="field">
-    <%= f.label :language %><br>
-     </div>
-  <div class="field">
-    
     <%= f.hidden_field :cost %>
   </div>
    
 
-
-
   <div class="field">Audio Guide:
   <%= check_box_tag'guide[audio]','audio'%>
+  </div>
+
+  <div class="field">Lunch:
+  <%= check_box_tag'guide[lunch]','lunch'%>
   </div>
 
   <div class="actions">
