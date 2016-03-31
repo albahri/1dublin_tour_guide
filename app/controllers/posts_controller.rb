@@ -38,29 +38,29 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   # POST /guide/1/posts
+   
   def create
     @guide = Guide.find(params[:guide_id])
-    @post = @guide.posts.build(posts_params)if @post.save
-    #Post saved, redirect to guide page
-    redirect_to guide_post_url(@guide, @post)
-  else
-    render :action => "new"
+    @post = @guide.posts.build(posts_params)
+    if @post.save 
+      #Post saved, redirect to guide page
+       redirect_to guide_post_url(@guide, @post)
+        else
+     render :action => "new"
+    end
   end
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   # PUT /guides/1/posts/2
   def update
-  @guide = Guide.find(params[:guide_id])
-  @post = Post.find(params[:id])
-  if 
-    @post.update_attributes(posts_params)
+    @guide = Guide.find(params[:guide_id])
+    @post = Post.find(params[:id])
+    if @post.update_attributes(posts_params)
     #Post saved, redirect
     redirect_to guide_post_url(@guide, @post)
-  else
+    else
     render :action =>"edit"
-  
-  end
   end
 
   # DELETE /posts/1
@@ -83,7 +83,7 @@ class PostsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
+    def posts_params
       params.require(:post).permit(:post_message, :guide_id)
     end
-
+end
