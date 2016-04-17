@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   
+  resources :tourists
+  resources :customers
   resources :profiles
   resources :guides do
     resources :posts

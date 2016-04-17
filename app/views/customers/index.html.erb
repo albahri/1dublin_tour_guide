@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag(customers_path, :method => "get", id:"search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Customers By Name" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<h1>Listing Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Frist Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.lastName %></td>
+        <td><%= customer.email %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>

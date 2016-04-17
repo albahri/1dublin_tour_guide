@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<%= form_tag(tourists_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Tourists By Lastname" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<h1>Listing Tourists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tourists.each do |tourist| %>
+      <tr>
+        <td><%= tourist.firstname %></td>
+        <td><%= tourist.lastname %></td>
+        <td><%= tourist.email %></td>
+        <td><%= tourist.phone %></td>
+        <td><%= link_to 'Show', tourist %></td>
+        <td><%= link_to 'Edit', edit_tourist_path(tourist) %></td>
+        <td><%= link_to 'Destroy', tourist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tourist', new_tourist_path %>

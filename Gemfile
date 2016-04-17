@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'forecast_io'
-gem 'figaro'
+
 # gem "therubyracer"
 # gem "less_rails"
 # gem "twitter-bootstrap-rails"
