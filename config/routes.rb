@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
   
+  resources :tours
   resources :tourists
   resources :customers
   resources :profiles
+  
   resources :guides do
     resources :posts
   end

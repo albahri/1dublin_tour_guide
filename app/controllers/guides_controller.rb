@@ -1,7 +1,7 @@
 require 'guide_decorator'
 
 class GuidesController < ApplicationController
-  before_action :set_guide, only: [:show, :edit, :update, :destroy]
+  before_action :set_guide, only: [:show, :edit, :destroy]
   before_filter :authenticate_user! 
   before_filter :ensure_admin, :only =>[:edit, :destroy]
 
