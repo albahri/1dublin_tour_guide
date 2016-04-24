@@ -20,6 +20,11 @@
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
+    <div class="section"><span>2</span> Date1 </div>
+  <div class="inner-wrap">
+    <!--<%= f.label :date, "Day" %><br>-->
+    <%= f.date_select :date, order: [:day, :month, :year] %>
+  </div>
   
   <div class="field">
     <%= f.label :time %><br>
@@ -38,7 +43,7 @@
   <%= check_box_tag'guide[lunch]','lunch'%>
   </div>
 
-  <div class="actions">
+  <div class="small button">
     <%= f.submit %>
   </div>
 <% end %>
