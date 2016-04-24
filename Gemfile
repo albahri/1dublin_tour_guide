@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'forecast_io'
+gem 'figaro'
 gem 'geocoder'
 # gem "therubyracer"
 # gem "less_rails"
