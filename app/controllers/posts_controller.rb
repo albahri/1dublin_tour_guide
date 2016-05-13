@@ -70,7 +70,7 @@ class PostsController < ApplicationController
     @guide = Guide.find(params[:guide_id])
     @post = Post.find(params[:id])
     @post.destroy
-    respond_to go |format|
+    respond_to do |format|
     format.html {redirect_to guide_posts_path(@guide) }
     format.xml {head :ok}
     end

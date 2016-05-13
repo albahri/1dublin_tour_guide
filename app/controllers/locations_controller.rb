@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
+
   # GET /locations
   # GET /locations.json
   def index
@@ -75,4 +76,10 @@ end
     def location_params
       params.require(:location).permit(:address, :latitude, :longitude)
     end
+
+    def ensure_admin
+    unless current_user && current_user.admin?
+    render :text => "Access Error Message", :status => :unauthorized
+    end
+   end
 end

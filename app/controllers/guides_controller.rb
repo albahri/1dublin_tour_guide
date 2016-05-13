@@ -107,3 +107,5 @@ class GuidesController < ApplicationController
     end
   end
 end
+
+
